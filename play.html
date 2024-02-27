@@ -76,20 +76,21 @@
     }
 
     function drop(ev) {
-      ev.preventDefault();
-      if (deleteMode) return; // If in delete mode, don't drop
-      var data = ev.dataTransfer.getData("text");
-      var canvas = document.getElementById("buildingCanvas");
-      var ctx = canvas.getContext("2d");
-      var img = new Image();
-      img.src = data.toLowerCase(); // Corrected image source
-      img.onload = function() {
-        // Adjust the size as needed using CSS
-        var width = 50; // Default width
-        var height = 50; // Default height
-        ctx.drawImage(img, ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop, width, height);
-      };
-    }
+  ev.preventDefault();
+  if (deleteMode) return; // If in delete mode, don't drop
+  var data = ev.dataTransfer.getData("text");
+  var canvas = document.getElementById("buildingCanvas");
+  var ctx = canvas.getContext("2d");
+  var img = new Image();
+  img.src = "images/" + data.toLowerCase() + ".png"; // Corrected image source
+  img.onload = function() {
+    // Adjust the size as needed using CSS
+    var width = 50; // Default width
+    var height = 50; // Default height
+    ctx.drawImage(img, ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop, width, height);
+  };
+}
+
 
 
 
