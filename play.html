@@ -82,7 +82,7 @@
   var canvas = document.getElementById("buildingCanvas");
   var ctx = canvas.getContext("2d");
   var img = new Image();
-  img.src = "images/" + data.toLowerCase() + ".png"; // Corrected image source
+  img.src = "https://codetestgroup.github.io/Build2D/images/" + data.toLowerCase(); // Corrected image source
   img.onload = function() {
     // Adjust the size as needed using CSS
     var width = 50; // Default width
@@ -90,6 +90,7 @@
     ctx.drawImage(img, ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop, width, height);
   };
 }
+
 
 
 
